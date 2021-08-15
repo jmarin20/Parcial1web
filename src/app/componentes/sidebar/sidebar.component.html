@@ -1,39 +1,52 @@
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{nombreRecibido}}</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true"> &times;
+      </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="{{imagenRecibida}}" style="width: 450px; height: 350px">
+    <p>{{descripcionRecibida}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="modal.close()">
+      Aceptar!
+    </button>
+  </div>
+</ng-template>
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" id="divsidebar">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+  <span href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
     <span class="fs-4">Sidebar</span>
-  </a>
+  </span>
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a href="#" class="nav-link active" aria-current="page">
+      <span type="button" class="btn-lg btn-dark" (click)="modal.open(contenido);
+      ponerInfo('assets/volcada.jpg', 'Volcada', 'COLOCA UNA DESCRIPCION AQUI')" >
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-        Home
-      </a>
+        Volcada
+        <span type="button" (click)="modal.open(contenido)"></span>
+      </span>
     </li>
     <li>
-      <a href="#" class="nav-link link-dark">
+      <span type="button" class="btn-lg btn-dark " (click)="modal.open(contenido);
+      ponerInfo('assets/fichaje.png', 'Fichaje', 'COLOCA UNA DESCRIPCION AQUI')">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-        Dashboard
-      </a>
+        Fichaje
+        <span type="button" (click)="modal.open(contenido)"></span>
+      </span>
     </li>
     <li>
-      <a href="#" class="nav-link link-dark">
+      <span type="button" class="btn-lg btn-dark" (click)="modal.open(contenido);
+      ponerInfo('assets/arena.jpg', 'Arena', 'COLOCA UNA DESCRIPCION AQUI')" >
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-        Orders
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link link-dark">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-        Products
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link link-dark">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-        Customers
-      </a>
+        Arena
+      </span>
     </li>
   </ul>
 </div>
+
+
